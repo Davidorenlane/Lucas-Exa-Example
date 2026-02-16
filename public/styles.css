@@ -1,0 +1,190 @@
+:root {
+  --bg: #eef4f5;
+  --card: #ffffff;
+  --text: #1a2830;
+  --muted: #566672;
+  --border: #d5e1e5;
+  --primary: #146c43;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 80% 0%, #dbeff4, transparent 35%), var(--bg);
+}
+
+.layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+textarea,
+input,
+button {
+  font: inherit;
+}
+
+textarea,
+input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.inline-note {
+  display: flex;
+  align-items: end;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+
+#start-job-button {
+  background: var(--primary);
+  color: #fff;
+}
+
+#refresh-button,
+#export-button,
+.job-actions button {
+  background: #dfe8ec;
+  color: #2f4050;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.meta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+th {
+  background: #f6fafb;
+}
+
+.jobs-list {
+  display: grid;
+  gap: 10px;
+}
+
+.job-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.job-request {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.job-actions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
